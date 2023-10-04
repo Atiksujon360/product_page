@@ -33,7 +33,25 @@ document.addEventListener("DOMContentLoaded", function () {
   closeModalButton.addEventListener("click", function () {
     successModal.style.display = "none";
   });
-
+  // Function to update date and time in the footer
+  function updateDateTime() {
+    const currentDateTime = new Date();
+    const options = {
+      weekday: "long",
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
+      second: "2-digit",
+      timeZoneName: "short",
+    };
+    const formattedDateTime = currentDateTime.toLocaleDateString(
+      undefined,
+      options
+    );
+    footerDateTimeElement.textContent = formattedDateTime;
+  }
   // Slider and dots logic
   const slider = document.querySelector(".slider");
   const sliderImages = slider.querySelectorAll("img");
@@ -99,4 +117,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // Initial update of the "Add to Cart" button
   updateAddToCartButton();
   updatePrice();
+  updateDateTime();
 });
