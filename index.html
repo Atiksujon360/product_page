@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modern Product Page</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Headphones</h1>
+    </header>
+
+    <main>
+      <div class="product-container">
+        <div class="slider-container">
+          <div class="slider">
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/23aa2567167779.5b309f18be63f.jpg"
+              alt="Headphone Image 1"
+            />
+            <img
+              src="https://mir-s3-cdn-cf.behance.net/project_modules/1400/ac5e3967167779.5b309f18c03f6.jpg"
+              alt="Headphone Image 2"
+            />
+          </div>
+        </div>
+        <div class="dots"></div>
+      </div>
+
+      <div class="product-info">
+        <h2>High-Quality Modern Headphones</h2>
+        <p class="product-description">
+          Immerse yourself in premium audio with these stylish headphones. Lorem
+          ipsum dolor sit amet, consectetur adipiscing elit.
+        </p>
+        <p class="product-price">$49.99</p>
+
+        <div class="product-variations">
+          <label for="size">Size:</label>
+          <select id="size">
+            <option value="small" data-price="49.99" data-available="true">
+              Small
+            </option>
+            <option value="medium" data-price="59.99" data-available="false">
+              Medium (Out of Stock)
+            </option>
+            <option value="large" data-price="69.99" data-available="true">
+              Large
+            </option>
+          </select>
+
+          <label for="color">Color:</label>
+          <select id="color">
+            <option value="red" data-price="5">Red</option>
+            <option value="blue" data-price="10">Blue</option>
+            <option value="green" data-price="15">Green</option>
+          </select>
+        </div>
+
+        <div class="add-to-cart">
+          <button id="addToCart">Add to Cart</button>
+          <input type="number" id="quantity" value="1" min="1" />
+        </div>
+      </div>
+    </main>
+
+    <div class="modal-overlay" id="successModal">
+      <div class="modal">
+        <h2>Product Added to Cart!</h2>
+        <p><strong>Size:</strong> <span id="selectedSize"></span></p>
+        <p><strong>Color:</strong> <span id="selectedColor"></span></p>
+        <p><strong>Quantity:</strong> <span id="selectedQuantity"></span></p>
+        <button id="closeModal">Close</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
