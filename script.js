@@ -9,12 +9,13 @@ document.addEventListener("DOMContentLoaded", function () {
   function updateAddToCartButton() {
     const selectedSize = sizeDropdown.value;
     const selectedOption = sizeDropdown.options[sizeDropdown.selectedIndex];
-
-    // Check if the selected size is available (data-available attribute)
     const isSizeAvailable =
       selectedOption.getAttribute("data-available") === "true";
 
     addToCartButton.disabled = !isSizeAvailable;
+    addToCartButton.style.backgroundColor = isSizeAvailable
+      ? "#ff5733"
+      : "#ccc";
   }
 
   addToCartButton.addEventListener("click", function () {
